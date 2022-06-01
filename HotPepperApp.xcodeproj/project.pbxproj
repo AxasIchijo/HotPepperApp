@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		225608962844FB16009FE81C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225608952844FB16009FE81C /* AppDelegate.swift */; };
 		225608982844FB16009FE81C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225608972844FB16009FE81C /* SceneDelegate.swift */; };
-		2256089A2844FB16009FE81C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225608992844FB16009FE81C /* ViewController.swift */; };
-		2256089D2844FB16009FE81C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2256089B2844FB16009FE81C /* Main.storyboard */; };
 		2256089F2844FB26009FE81C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2256089E2844FB26009FE81C /* Assets.xcassets */; };
 		225608A22844FB26009FE81C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225608A02844FB26009FE81C /* LaunchScreen.storyboard */; };
+		225608AB2844FDBB009FE81C /* ShopListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225608A92844FDBB009FE81C /* ShopListViewController.swift */; };
+		225608AC2844FDBB009FE81C /* ShopListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225608AA2844FDBB009FE81C /* ShopListViewController.xib */; };
+		225608AE28450341009FE81C /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225608AD28450341009FE81C /* ApiKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		225608922844FB16009FE81C /* HotPepperApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotPepperApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		225608952844FB16009FE81C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		225608972844FB16009FE81C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		225608992844FB16009FE81C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2256089C2844FB16009FE81C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2256089E2844FB26009FE81C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		225608A12844FB26009FE81C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		225608A32844FB26009FE81C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		225608A92844FDBB009FE81C /* ShopListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListViewController.swift; sourceTree = "<group>"; };
+		225608AA2844FDBB009FE81C /* ShopListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopListViewController.xib; sourceTree = "<group>"; };
+		225608AD28450341009FE81C /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,40 @@
 		225608942844FB16009FE81C /* HotPepperApp */ = {
 			isa = PBXGroup;
 			children = (
+				225608AF2845049D009FE81C /* ViewController */,
 				225608952844FB16009FE81C /* AppDelegate.swift */,
 				225608972844FB16009FE81C /* SceneDelegate.swift */,
-				225608992844FB16009FE81C /* ViewController.swift */,
-				2256089B2844FB16009FE81C /* Main.storyboard */,
 				2256089E2844FB26009FE81C /* Assets.xcassets */,
 				225608A02844FB26009FE81C /* LaunchScreen.storyboard */,
 				225608A32844FB26009FE81C /* Info.plist */,
+				225608AD28450341009FE81C /* ApiKey.swift */,
 			);
 			path = HotPepperApp;
+			sourceTree = "<group>";
+		};
+		225608AF2845049D009FE81C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				225608B1284504F8009FE81C /* ShopDetail */,
+				225608B0284504C4009FE81C /* ShopList */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		225608B0284504C4009FE81C /* ShopList */ = {
+			isa = PBXGroup;
+			children = (
+				225608A92844FDBB009FE81C /* ShopListViewController.swift */,
+				225608AA2844FDBB009FE81C /* ShopListViewController.xib */,
+			);
+			path = ShopList;
+			sourceTree = "<group>";
+		};
+		225608B1284504F8009FE81C /* ShopDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ShopDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +152,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				225608AC2844FDBB009FE81C /* ShopListViewController.xib in Resources */,
 				225608A22844FB26009FE81C /* LaunchScreen.storyboard in Resources */,
 				2256089F2844FB26009FE81C /* Assets.xcassets in Resources */,
-				2256089D2844FB16009FE81C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +165,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2256089A2844FB16009FE81C /* ViewController.swift in Sources */,
+				225608AE28450341009FE81C /* ApiKey.swift in Sources */,
+				225608AB2844FDBB009FE81C /* ShopListViewController.swift in Sources */,
 				225608962844FB16009FE81C /* AppDelegate.swift in Sources */,
 				225608982844FB16009FE81C /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +175,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2256089B2844FB16009FE81C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2256089C2844FB16009FE81C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		225608A02844FB26009FE81C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,7 +314,6 @@
 				INFOPLIST_FILE = HotPepperApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,7 +341,6 @@
 				INFOPLIST_FILE = HotPepperApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
