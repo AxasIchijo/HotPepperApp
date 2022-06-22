@@ -10,16 +10,22 @@ import UIKit
 class ShopDetailViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    
     private let shopDetailDataSource = ShopDetailDataSource()
     
     public var shopName: String?;
     
+    public var id: String?;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.backButtonDisplayMode = .minimal
-        self.title = shopName
-        
-        tableView.tableHeaderView = UIImageView()
+        title = shopName
+        if let shopDetail = ShopInfoDataService.shared.getShopDetail(id: id!) {
+            shopDetailDataSource.tableData = shopDetail.detailList
+        } else {
+            print("shop detail not found")
+        }
         
         tableView.delegate = self
         tableView.dataSource = shopDetailDataSource

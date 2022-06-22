@@ -9,7 +9,7 @@ import UIKit
 
 class ShopDetailDataSource: NSObject,  UITableViewDataSource {
     
-    let tableData = ["1", "2", "3", "4", "5", "2", "3", "4", "5"]
+    var tableData: [ViewShopDetailEntity.Detail] = []
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -23,10 +23,12 @@ class ShopDetailDataSource: NSObject,  UITableViewDataSource {
         // 自作セルを返却
         if(indexPath.row == 0) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewImageCell", for: indexPath ) as! TableViewImageCell
+            cell.shopImage.image = UIImage(url: tableData[indexPath.row].value)
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ShopDetailTableViewCell", for: indexPath ) as! ShopDetailTableViewCell
-            cell.titleLabel.text = tableData[indexPath.row]
+            cell.titleLabel.text = tableData[indexPath.row].title
+            cell.detailLabel.text = tableData[indexPath.row].value
             return cell
         }
     }
