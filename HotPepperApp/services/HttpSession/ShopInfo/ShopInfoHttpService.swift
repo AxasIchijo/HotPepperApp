@@ -9,12 +9,19 @@ import Foundation
 import UIKit
 
 struct ShopInfoHttpService {
-    let url = "http://webservice.recruit.co.jp/hotpepper/gourmet/v1"
+    var url: String
+    var session: HttpSession;
     let queryParams: Dictionary<String, String> = ["key": key, "large_area": "Z011","format": "json"]
+
+    init(session: HttpSession = URLSession.shared, url: String = "http://webservice.recruit.co.jp/hotpepper/gourmet/v1") {
+        self.session = session
+        self.url = url
+    }
     
     func get(controller: UIViewController) -> Void {
         let request = url + getQuery(params: queryParams)
-        URLSession.shared.dataTask(with: URL(string: request)!) { data, response, error in
+        
+        self.session.http(url: URL(string: request)!, completion: { data, response, error in
             guard let d = data else { return }
             
             if (error != nil) {
@@ -30,7 +37,7 @@ struct ShopInfoHttpService {
                 print("JSON Decode Error :\(e)")
                 fatalError()
             }
-        }.resume()
+        }).resume()
     }
     
     func getQuery(params: Dictionary<String,String>) -> String {

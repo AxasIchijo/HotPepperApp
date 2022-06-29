@@ -20,16 +20,22 @@ class ShopDetailDataSource: NSObject,  UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         // 自作セルを返却
-        if(indexPath.row == 0) {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewImageCell", for: indexPath ) as! TableViewImageCell
+        switch CellType.getType(row: indexPath.row, length: self.tableData.count) {
+        case .image:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewImageCell", for: indexPath ) as? TableViewImageCell else {
+                return UITableViewCell()
+            }
             cell.shopImage.image = UIImage(url: tableData[indexPath.row].value)
             return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ShopDetailTableViewCell", for: indexPath ) as! ShopDetailTableViewCell
+        case .detail:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ShopDetailTableViewCell", for: indexPath ) as? ShopDetailTableViewCell else {return UITableViewCell() }
             cell.titleLabel.text = tableData[indexPath.row].title
             cell.detailLabel.text = tableData[indexPath.row].value
             return cell
+        default:
+            return UITableViewCell()
         }
     }
 }
